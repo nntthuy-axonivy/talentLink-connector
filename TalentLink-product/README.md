@@ -22,7 +22,7 @@ Before any interactions between the Axon Ivy Engine and TalentLink services can 
 ```
 Variables:
   
-  docuware-connector:
+  talentlink-connector:
   
     host: <myhost>
     
