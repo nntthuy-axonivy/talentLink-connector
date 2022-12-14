@@ -1,0 +1,295 @@
+{
+  "format" : "10.0.0",
+  "id" : "184A87EF6D8E656D",
+  "kind" : "CALLABLE_SUB",
+  "config" : {
+    "data" : "talent.link.demo.talentLinkDemoData"
+  },
+  "elements" : [ {
+      "id" : "f5",
+      "type" : "RequestStart",
+      "name" : "getCandidate.ivp",
+      "config" : {
+        "callSignature" : "getCandidate",
+        "outLink" : "getCandidate.ivp"
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 232 }
+      },
+      "connect" : { "id" : "f18", "to" : "f10" }
+    }, {
+      "id" : "f6",
+      "type" : "RequestStart",
+      "name" : "getPosition.ivp",
+      "config" : {
+        "callSignature" : "getPosition",
+        "outLink" : "getPosition.ivp"
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 304 }
+      },
+      "connect" : { "id" : "f20", "to" : "f15" }
+    }, {
+      "id" : "f7",
+      "type" : "RequestStart",
+      "name" : "getDocument.ivp",
+      "config" : {
+        "callSignature" : "getDocument",
+        "outLink" : "getDocument.ivp"
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 376 }
+      },
+      "connect" : { "id" : "f22", "to" : "f9" }
+    }, {
+      "id" : "f11",
+      "type" : "TaskEnd",
+      "visual" : {
+        "at" : { "x" : 352, "y" : 232 }
+      }
+    }, {
+      "id" : "f12",
+      "type" : "TaskEnd",
+      "visual" : {
+        "at" : { "x" : 352, "y" : 304 }
+      }
+    }, {
+      "id" : "f13",
+      "type" : "TaskEnd",
+      "visual" : {
+        "at" : { "x" : 352, "y" : 376 }
+      }
+    }, {
+      "id" : "f9",
+      "type" : "SubProcessCall",
+      "name" : "soap/Document",
+      "config" : {
+        "processCall" : "soap/Document:wsResponse(Long)",
+        "output" : {
+          "map" : {
+            "out" : "in",
+            "out.document" : "result.document"
+          },
+          "code" : [
+            "if(result.document != null){",
+            "  ivy.log.info(\"Document: \"+result.document);",
+            "}"
+          ]
+        },
+        "call" : {
+          "params" : [
+            { "name" : "documentId", "type" : "Long" }
+          ],
+          "map" : {
+            "param.documentId" : "3622"
+          }
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 232, "y" : 376 }
+      },
+      "connect" : { "id" : "f19", "to" : "f13" }
+    }, {
+      "id" : "f10",
+      "type" : "SubProcessCall",
+      "name" : "rest/Candidate",
+      "config" : {
+        "processCall" : "rest/Candidate:getCandidate(Long)",
+        "output" : {
+          "map" : {
+            "out" : "in",
+            "out.candidates" : "result.candidates"
+          },
+          "code" : [
+            "if(result.candidates != null){",
+            "  ivy.log.info(\"Candidate: \"+result.candidates.get(0));",
+            "}"
+          ]
+        },
+        "call" : {
+          "params" : [
+            { "name" : "candidateId", "type" : "Long" }
+          ],
+          "map" : {
+            "param.candidateId" : "458"
+          }
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 232, "y" : 232 }
+      },
+      "connect" : { "id" : "f21", "to" : "f11" }
+    }, {
+      "id" : "f15",
+      "type" : "SubProcessCall",
+      "name" : "rest/Position",
+      "config" : {
+        "processCall" : "rest/Position:getPosition(Long)",
+        "output" : {
+          "map" : {
+            "out" : "in",
+            "out.positions" : "result.positions"
+          },
+          "code" : [
+            "if(result.positions != null){",
+            "  ivy.log.info(\"Posititon: \"+result.positions.get(0));",
+            "}"
+          ]
+        },
+        "call" : {
+          "params" : [
+            { "name" : "positionId", "type" : "Long" }
+          ],
+          "map" : {
+            "param.positionId" : "835"
+          }
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 232, "y" : 304 }
+      },
+      "connect" : { "id" : "f17", "to" : "f12" }
+    }, {
+      "id" : "f0",
+      "type" : "RequestStart",
+      "name" : "getDepartment.ivp",
+      "config" : {
+        "callSignature" : "start",
+        "outLink" : "start.ivp",
+        "input" : {
+          "params" : [
+            { "name" : "departmentQuery", "type" : "String" }
+          ]
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 160 }
+      },
+      "connect" : { "id" : "f4", "to" : "f2" }
+    }, {
+      "id" : "f1",
+      "type" : "TaskEnd",
+      "visual" : {
+        "at" : { "x" : 352, "y" : 160 }
+      }
+    }, {
+      "id" : "f2",
+      "type" : "SubProcessCall",
+      "name" : "rest/Department",
+      "config" : {
+        "processCall" : "rest/Department:call(Long,String)",
+        "output" : {
+          "map" : {
+            "out" : "in",
+            "out.department" : "result.department"
+          },
+          "code" : [
+            "if(result.department != null){",
+            "  ivy.log.info(\"Department: \"+result.department.get(0));",
+            "}"
+          ]
+        },
+        "call" : {
+          "params" : [
+            { "name" : "departmentId", "type" : "Long" },
+            { "name" : "query", "type" : "String" }
+          ],
+          "map" : {
+            "param.query" : "\"{departments(first: 10, after: 0, where: {id_eq:354}) {id , name, level, parentId}}\""
+          }
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 232, "y" : 160 }
+      },
+      "connect" : { "id" : "f3", "to" : "f1" }
+    }, {
+      "id" : "f8",
+      "type" : "RequestStart",
+      "name" : "getQueue.ivp",
+      "config" : {
+        "callSignature" : "start2",
+        "outLink" : "start2.ivp"
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 456 }
+      },
+      "connect" : { "id" : "f23", "to" : "f16" }
+    }, {
+      "id" : "f14",
+      "type" : "TaskEnd",
+      "visual" : {
+        "at" : { "x" : 352, "y" : 456 }
+      }
+    }, {
+      "id" : "f16",
+      "type" : "SubProcessCall",
+      "name" : "soap/Queue",
+      "config" : {
+        "processCall" : "soap/Queue:getApplicationFromQueue(String)",
+        "output" : {
+          "map" : {
+            "out" : "in",
+            "out.application" : "result.application"
+          },
+          "code" : [
+            "if(result.application != null){",
+            "  ivy.log.info(\"Application: \"+result.application);",
+            "}"
+          ]
+        },
+        "call" : {
+          "params" : [
+            { "name" : "queueName", "type" : "String" }
+          ],
+          "map" : {
+            "param.queueName" : "\"AxonIvy Offer Accepted\""
+          }
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 232, "y" : 456 }
+      },
+      "connect" : { "id" : "f24", "to" : "f14" }
+    }, {
+      "id" : "f25",
+      "type" : "ProcessAnnotation",
+      "name" : "Department",
+      "visual" : {
+        "at" : { "x" : 464, "y" : 152 },
+        "description" : "Returns test data from department Rest service. Searched by ID."
+      }
+    }, {
+      "id" : "f26",
+      "type" : "ProcessAnnotation",
+      "name" : "Candidate",
+      "visual" : {
+        "at" : { "x" : 464, "y" : 224 },
+        "description" : "Returns test data from candidate Rest service. Searched by ID."
+      }
+    }, {
+      "id" : "f27",
+      "type" : "ProcessAnnotation",
+      "name" : "Position",
+      "visual" : {
+        "at" : { "x" : 464, "y" : 304 },
+        "description" : "Returns test data from position Rest service. Searched by ID."
+      }
+    }, {
+      "id" : "f28",
+      "type" : "ProcessAnnotation",
+      "name" : "Document",
+      "visual" : {
+        "at" : { "x" : 464, "y" : 376 },
+        "description" : "Returns test data from document Soap service. Searched by ID."
+      }
+    }, {
+      "id" : "f29",
+      "type" : "ProcessAnnotation",
+      "name" : "Queue",
+      "visual" : {
+        "at" : { "x" : 464, "y" : 456 },
+        "description" : "Returns test data from queue Soap service. Searched by queue name."
+      }
+    } ]
+}

@@ -1,0 +1,27 @@
+# == Variables ==
+# 
+# You can define here your project Variables.
+# If you want to define/override a Variable for a specific Environment, 
+# add an additional ‘variables.yaml’ file in a subdirectory in the ‘Config’ folder: 
+# '<project>/Config/_<environment>/variables.yaml
+#
+Variables: 
+
+  talentlink-connector:
+  
+ # Dear Bug Hunter,
+ # This credential is intentionally included for educational purposes only and does not provide access to any production systems.
+ # Please do not submit it as part of our bug bounty program.
+  # Dear Bug Hunter,
+  # This credential is intentionally included for educational purposes only and does not provide access to any production systems.
+  # Please do not submit it as part of our bug bounty program.
+    host: apiproxy.shared.lumessetalentlink.com
+    
+    username: Ricoh Sandbox:axonivy_api:BO
+    
+    # [password]
+    password: K2iziebz
+    
+    apikey: 14e89284-9994-4eed-61bd-f67ded85af92
+
+

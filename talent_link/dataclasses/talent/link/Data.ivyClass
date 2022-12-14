@@ -1,0 +1,14 @@
+Data #class
+talent.link #namespace
+document com.mrted.ws.client.StructuredDocument #field
+positions java.util.List<com.lumessetalentlink.shared.apiproxy.tlk.rest.client.OpeningFullDto> #field
+application com.mrted.ws.client.ApplicationDto #field
+candidates java.util.List<com.lumessetalentlink.shared.apiproxy.tlk.rest.client.CandidateFullDto> #field
+departments java.util.List<com.lumessetalentlink.shared.apiproxy.tlk.rest.client.DepartmentFullDto> #field
+queue java.util.List #field
+candidateId Long #field
+positionId Long #field
+queryForDepartment String #field
+error ch.ivyteam.ivy.bpm.error.BpmError #field
+documentId Long #field
+queueName String #field

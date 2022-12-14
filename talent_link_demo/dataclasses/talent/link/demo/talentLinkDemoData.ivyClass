@@ -1,0 +1,8 @@
+talentLinkDemoData #class
+talent.link.demo #namespace
+document com.mrted.ws.client.StructuredDocument #field
+positions java.util.List<com.lumessetalentlink.shared.apiproxy.tlk.rest.client.OpeningFullDto> #field
+application com.mrted.ws.client.ApplicationDto #field
+candidates java.util.List<com.lumessetalentlink.shared.apiproxy.tlk.rest.client.CandidateFullDto> #field
+department java.util.List<com.lumessetalentlink.shared.apiproxy.tlk.rest.client.DepartmentFullDto> #field
+departmentQuery String #field
