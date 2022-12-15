@@ -26,32 +26,32 @@ import ch.ivyteam.ivy.workflow.CaseState;
  * <a href="https://developer.axonivy.com/doc/10.0/concepts/testing/process-testing.html">Process Testing docs</a>
  * </p>
  */
-@IvyProcessTest
-public class SampleProcessTest{
-  
-  private static final BpmProcess testee = BpmProcess.path("MyProcess");
-  
-  @Test
-  public void callProcess(BpmClient bpmClient){
-    BpmElement startable = testee.elementName("start.ivp");
-    ExecutionResult result = bpmClient.start().process(startable).execute();
-    CompositeObject data = result.data().last();
-    assertThat(data).isNotNull();
-  }
-  
-  @Test
-  @Disabled("illustrative code: needs adaption to your environment")
-  public void workflow(BpmClient bpmClient)
-  {
-    BpmElement startable = testee.elementName("start.ivp");
-    
-    // start as authenticated user
-    String myUser = "myUser";
-    ExecutionResult result = bpmClient.start().process(startable).as().user(myUser).execute();
-    assertThat(result.workflow().activeCase()).isEqualTo(CaseState.RUNNING);
-    assertThat(result.workflow().executedTask().activator().name()).isEqualTo(myUser);
-    
-    // continue after task/switch
-    bpmClient.start().anyActiveTask(result).as().role("supervisor").execute();
-  }
-}
+//@IvyProcessTest
+//public class SampleProcessTest{
+//  
+//  private static final BpmProcess testee = BpmProcess.path("MyProcess");
+//  
+//  @Test
+//  public void callProcess(BpmClient bpmClient){
+//    BpmElement startable = testee.elementName("start.ivp");
+//    ExecutionResult result = bpmClient.start().process(startable).execute();
+//    CompositeObject data = result.data().last();
+//    assertThat(data).isNotNull();
+//  }
+//  
+//  @Test
+//  @Disabled("illustrative code: needs adaption to your environment")
+//  public void workflow(BpmClient bpmClient)
+//  {
+//    BpmElement startable = testee.elementName("start.ivp");
+//    
+//    // start as authenticated user
+//    String myUser = "myUser";
+//    ExecutionResult result = bpmClient.start().process(startable).as().user(myUser).execute();
+//    assertThat(result.workflow().activeCase()).isEqualTo(CaseState.RUNNING);
+//    assertThat(result.workflow().executedTask().activator().name()).isEqualTo(myUser);
+//    
+//    // continue after task/switch
+//    bpmClient.start().anyActiveTask(result).as().role("supervisor").execute();
+//  }
+//}

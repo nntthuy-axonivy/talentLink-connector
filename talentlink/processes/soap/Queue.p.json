@@ -16,7 +16,7 @@
             { "name" : "queueName", "type" : "String" }
           ],
           "map" : {
-            "out.queueName" : "param.queueName"
+            "out.queueName" : "param.#queueName"
           }
         },
         "result" : {
