@@ -1,6 +1,6 @@
 {
   "format" : "10.0.0",
-  "id" : "184C3626F42D7C7C",
+  "id" : "185864F1D4F2E5BD",
   "kind" : "CALLABLE_SUB",
   "config" : {
     "data" : "talent.link.Data"
@@ -8,33 +8,32 @@
   "elements" : [ {
       "id" : "f0",
       "type" : "CallSubStart",
-      "name" : "getPosition(Long)",
+      "name" : "getLovs()",
       "config" : {
-        "callSignature" : "getPosition",
+        "callSignature" : "call",
         "input" : {
           "params" : [
-            { "name" : "positionId", "type" : "Long" }
+            { "name" : "lovId", "type" : "Long" }
           ],
           "map" : {
-            "out.positionId" : "param.positionId"
+            "out.lovId" : "param.#lovId"
           }
         },
         "result" : {
           "params" : [
-            { "name" : "positions", "type" : "java.util.List<com.lumessetalentlink.shared.apiproxy.tlk.rest.client.OpeningFullDto>" },
+            { "name" : "lovs", "type" : "java.util.List<com.lumessetalentlink.shared.apiproxy.tlk.rest.client.LovFullDto>" },
             { "name" : "error", "type" : "ch.ivyteam.ivy.bpm.error.BpmError" }
           ],
           "map" : {
-            "result.positions" : "in.positions",
+            "result.lovs" : "in.#lovs",
             "result.error" : "in.#error"
           }
-        },
-        "tags" : "connector"
+        }
       },
       "visual" : {
         "at" : { "x" : 96, "y" : 64 }
       },
-      "connect" : { "id" : "f4", "to" : "f3" }
+      "connect" : { "id" : "f2", "to" : "f3" }
     }, {
       "id" : "f1",
       "type" : "CallSubEnd",
@@ -44,21 +43,21 @@
     }, {
       "id" : "f3",
       "type" : "RestClientCall",
-      "name" : "Position",
+      "name" : "Lov",
       "config" : {
-        "path" : "/position",
+        "path" : "/lov",
         "clientId" : "d8e4652e-41d5-4023-90c5-5c822b8600e2",
         "clientErrorCode" : "ivy:error:rest:client",
         "queryParams" : {
-          "query" : "java.net.URLEncoder.encode(\"{positions(first: 10, after: 0, where: {id_eq: \"+in.positionId+\"}) {id, expectedContractDates{start, end}, location{city, region, country}, configurableFields{lovs{valueLovId, value} }, organization{id, name, parentId, level, structure{id, name, level, parentId}}}}\", \"utf-8\")",
+          "query" : "java.net.URLEncoder.encode(\"{lovs(first: 10, after: 0, where: {id_eq:\"+in.lovId+\"}) {id, value, name}}\", \"utf-8\")",
           "stream" : "",
           "api_key" : "ivy.var.get(\"talentlink-connector.apikey\")"
         },
         "statusErrorCode" : "ivy:error:rest:client",
         "responseMapping" : {
-          "out.positions" : "result.data.positions"
+          "out.lovs" : "result.data.lovs"
         },
-        "resultType" : "com.lumessetalentlink.shared.apiproxy.tlk.rest.client.PositionGraphQlWrapperDto"
+        "resultType" : "com.lumessetalentlink.shared.apiproxy.tlk.rest.client.LovGraphQLWrapperDto"
       },
       "visual" : {
         "at" : { "x" : 224, "y" : 64 }
@@ -75,10 +74,10 @@
             }
           },
           "visual" : {
-            "at" : { "x" : 256, "y" : 106 }
+            "at" : { "x" : 256, "y" : 104 }
           },
-          "connect" : { "id" : "f6", "to" : "f1", "via" : [ { "x" : 352, "y" : 106 } ] }
+          "connect" : { "id" : "f6", "to" : "f1", "via" : [ { "x" : 352, "y" : 104 } ] }
         } ],
-      "connect" : { "id" : "f2", "to" : "f1" }
+      "connect" : { "id" : "f4", "to" : "f1" }
     } ]
 }

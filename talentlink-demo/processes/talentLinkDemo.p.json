@@ -14,7 +14,7 @@
         "outLink" : "getCandidate.ivp"
       },
       "visual" : {
-        "at" : { "x" : 96, "y" : 232 }
+        "at" : { "x" : 88, "y" : 232 }
       },
       "connect" : { "id" : "f18", "to" : "f10" }
     }, {
@@ -26,7 +26,7 @@
         "outLink" : "getPosition.ivp"
       },
       "visual" : {
-        "at" : { "x" : 96, "y" : 304 }
+        "at" : { "x" : 88, "y" : 304 }
       },
       "connect" : { "id" : "f20", "to" : "f15" }
     }, {
@@ -38,26 +38,26 @@
         "outLink" : "getDocument.ivp"
       },
       "visual" : {
-        "at" : { "x" : 96, "y" : 376 }
+        "at" : { "x" : 88, "y" : 376 }
       },
       "connect" : { "id" : "f22", "to" : "f9" }
     }, {
       "id" : "f11",
       "type" : "TaskEnd",
       "visual" : {
-        "at" : { "x" : 352, "y" : 232 }
+        "at" : { "x" : 344, "y" : 232 }
       }
     }, {
       "id" : "f12",
       "type" : "TaskEnd",
       "visual" : {
-        "at" : { "x" : 352, "y" : 304 }
+        "at" : { "x" : 344, "y" : 304 }
       }
     }, {
       "id" : "f13",
       "type" : "TaskEnd",
       "visual" : {
-        "at" : { "x" : 352, "y" : 376 }
+        "at" : { "x" : 344, "y" : 376 }
       }
     }, {
       "id" : "f9",
@@ -81,7 +81,7 @@
             { "name" : "documentId", "type" : "Long" }
           ],
           "map" : {
-            "param.documentId" : "3622"
+            "param.documentId" : "3623"
           }
         }
       },
@@ -163,14 +163,14 @@
         }
       },
       "visual" : {
-        "at" : { "x" : 96, "y" : 160 }
+        "at" : { "x" : 88, "y" : 160 }
       },
       "connect" : { "id" : "f4", "to" : "f2" }
     }, {
       "id" : "f1",
       "type" : "TaskEnd",
       "visual" : {
-        "at" : { "x" : 352, "y" : 160 }
+        "at" : { "x" : 344, "y" : 160 }
       }
     }, {
       "id" : "f2",
@@ -206,20 +206,20 @@
     }, {
       "id" : "f8",
       "type" : "RequestStart",
-      "name" : "getQueue.ivp",
+      "name" : "getSoapQueue.ivp",
       "config" : {
-        "callSignature" : "start2",
-        "outLink" : "start2.ivp"
+        "callSignature" : "getSoapQueue",
+        "outLink" : "getSoapQueue.ivp"
       },
       "visual" : {
-        "at" : { "x" : 96, "y" : 456 }
+        "at" : { "x" : 88, "y" : 456 }
       },
       "connect" : { "id" : "f23", "to" : "f16" }
     }, {
       "id" : "f14",
       "type" : "TaskEnd",
       "visual" : {
-        "at" : { "x" : 352, "y" : 456 }
+        "at" : { "x" : 344, "y" : 456 }
       }
     }, {
       "id" : "f16",
@@ -230,7 +230,7 @@
         "output" : {
           "map" : {
             "out" : "in",
-            "out.application" : "result.application"
+            "out.applicationSoap" : "result.application"
           },
           "code" : [
             "if(result.application != null){",
@@ -286,10 +286,114 @@
     }, {
       "id" : "f29",
       "type" : "ProcessAnnotation",
-      "name" : "Queue",
+      "name" : "SOAP/Queue",
       "visual" : {
         "at" : { "x" : 464, "y" : 456 },
         "description" : "Returns test data from queue Soap service. Searched by queue name."
+      }
+    }, {
+      "id" : "f30",
+      "type" : "RequestStart",
+      "name" : "getRestQueue.ivp",
+      "config" : {
+        "callSignature" : "getRestQueue",
+        "outLink" : "getRestQueue.ivp"
+      },
+      "visual" : {
+        "at" : { "x" : 88, "y" : 536 }
+      },
+      "connect" : { "id" : "f35", "to" : "f32" }
+    }, {
+      "id" : "f31",
+      "type" : "TaskEnd",
+      "visual" : {
+        "at" : { "x" : 344, "y" : 536 }
+      }
+    }, {
+      "id" : "f32",
+      "type" : "SubProcessCall",
+      "name" : "rest/Queue",
+      "config" : {
+        "processCall" : "rest/Queue:call()",
+        "output" : {
+          "map" : {
+            "out" : "in",
+            "out.application" : "result.application"
+          },
+          "code" : [
+            "if(result.application != null){",
+            "  ivy.log.info(\"Application: \"+result.application);",
+            "}"
+          ]
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 232, "y" : 536 }
+      },
+      "connect" : { "id" : "f34", "to" : "f31" }
+    }, {
+      "id" : "f33",
+      "type" : "ProcessAnnotation",
+      "name" : "REST/Queue",
+      "visual" : {
+        "at" : { "x" : 464, "y" : 536 },
+        "description" : "Returns test data from queue Rest service."
+      }
+    }, {
+      "id" : "f36",
+      "type" : "RequestStart",
+      "name" : "getLov.ivp",
+      "config" : {
+        "callSignature" : "getLov",
+        "outLink" : "getLov.ivp"
+      },
+      "visual" : {
+        "at" : { "x" : 88, "y" : 624 }
+      },
+      "connect" : { "id" : "f40", "to" : "f38" }
+    }, {
+      "id" : "f37",
+      "type" : "TaskEnd",
+      "visual" : {
+        "at" : { "x" : 344, "y" : 624 }
+      }
+    }, {
+      "id" : "f38",
+      "type" : "SubProcessCall",
+      "name" : "rest/Lov",
+      "config" : {
+        "processCall" : "rest/Lov:call(Long)",
+        "output" : {
+          "map" : {
+            "out" : "in",
+            "out.lovs" : "result.lovs"
+          },
+          "code" : [
+            "if(result.lovs != null && result.lovs.size() > 0){",
+            "  ivy.log.info(\"Application: \"+result.lovs.get(0));",
+            "}"
+          ]
+        },
+        "call" : {
+          "params" : [
+            { "name" : "lovId", "type" : "Long" }
+          ],
+          "map" : {
+            "param.lovId" : "1"
+          }
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 232, "y" : 624 }
+      },
+      "connect" : { "id" : "f41", "to" : "f37" }
+    }, {
+      "id" : "f39",
+      "type" : "ProcessAnnotation",
+      "name" : "Lov",
+      "visual" : {
+        "at" : { "x" : 464, "y" : 624 },
+        "description" : "Returns test data from lov Rest service. Searched by ID."
       }
     } ]
 }

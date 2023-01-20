@@ -12,7 +12,7 @@ RestClients:
   #<span class="bold-span">QuickTip:</span> when writing the GraphQL query you can use CTRL + SPACE to see suggestions of the available schemas/tags.
   talentLink (Talentlink REST API Documentation):
     UUID: d8e4652e-41d5-4023-90c5-5c822b8600e2
-    Url: https://${ivy.var.talentlink-connector.host}/tlk/rest/
+    Url: https://apiproxy.shared.lumessetalentlink.com/tlk/rest
     Features:
     - ch.ivyteam.ivy.rest.client.mapper.JsonFeature
     - ch.ivyteam.ivy.rest.client.authentication.HttpBasicAuthenticationFeature
@@ -22,5 +22,5 @@ RestClients:
       api_key: ${ivy.var.talentlink-connector.apikey}
       PATH.host: ${ivy.var.talentlink-connector.host}
     OpenAPI:
-      SpecUrl: https://developer.lumesse-talenthub.com/rest-api-developers-guide/1.19.0/rest-api/swagger/swagger.json
+      SpecUrl: https://developer.lumesse-talenthub.com/rest-api-developers-guide/1.21.11/rest-api/swagger/swagger.json
       Namespace: com.lumessetalentlink.shared.apiproxy.tlk.rest.client
