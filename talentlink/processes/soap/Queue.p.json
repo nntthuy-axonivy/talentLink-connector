@@ -25,7 +25,7 @@
             { "name" : "error", "type" : "ch.ivyteam.ivy.bpm.error.BpmError" }
           ],
           "map" : {
-            "result.application" : "in.#application",
+            "result.application" : "in.#soapApplication",
             "result.error" : "in.#error"
           }
         }
@@ -54,7 +54,7 @@
         "output" : {
           "map" : {
             "out" : "in",
-            "out.application" : "wsResponse"
+            "out.soapApplication" : "wsResponse"
           }
         },
         "operation" : "getApplicationFromQueue"

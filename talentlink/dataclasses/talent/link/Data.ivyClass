@@ -15,3 +15,4 @@ queueName String #field
 queues java.util.List<com.lumessetalentlink.shared.apiproxy.tlk.rest.client.QueueDto> #field
 lovId Long #field
 lovs java.util.List<com.lumessetalentlink.shared.apiproxy.tlk.rest.client.LovFullDto> #field
+soapApplication com.mrted.ws.client.ApplicationDto #field
