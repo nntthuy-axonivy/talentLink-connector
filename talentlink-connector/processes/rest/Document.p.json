@@ -1,0 +1,56 @@
+{
+  "format" : "10.0.0",
+  "id" : "185DDFAB1E7B0FA1",
+  "kind" : "CALLABLE_SUB",
+  "config" : {
+    "data" : "talent.link.Data"
+  },
+  "elements" : [ {
+      "id" : "f0",
+      "type" : "CallSubStart",
+      "name" : "call(Long)",
+      "config" : {
+        "callSignature" : "call",
+        "input" : {
+          "params" : [
+            { "name" : "documentId", "type" : "Long" }
+          ],
+          "map" : {
+            "out.documentId" : "param.documentId"
+          }
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 64 }
+      },
+      "connect" : { "id" : "f4", "to" : "f3" }
+    }, {
+      "id" : "f1",
+      "type" : "CallSubEnd",
+      "visual" : {
+        "at" : { "x" : 352, "y" : 64 }
+      }
+    }, {
+      "id" : "f3",
+      "type" : "RestClientCall",
+      "name" : "Document",
+      "config" : {
+        "path" : "/candidate/document/{documentId}",
+        "clientId" : "d8e4652e-41d5-4023-90c5-5c822b8600e2",
+        "clientErrorCode" : "ivy:error:rest:client",
+        "queryParams" : {
+          "query" : "",
+          "api_key" : "ivy.var.get(\"talentlink-connector.apikey\")"
+        },
+        "statusErrorCode" : "ivy:error:rest:client",
+        "templateParams" : {
+          "documentId" : "in.documentId"
+        },
+        "responseCode" : "ivy.log.fatal(response);"
+      },
+      "visual" : {
+        "at" : { "x" : 224, "y" : 64 }
+      },
+      "connect" : { "id" : "f2", "to" : "f1" }
+    } ]
+}
