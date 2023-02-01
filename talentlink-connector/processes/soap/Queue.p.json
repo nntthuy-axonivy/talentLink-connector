@@ -28,7 +28,8 @@
             "result.application" : "in.#soapApplication",
             "result.error" : "in.#error"
           }
-        }
+        },
+        "tags" : "connector"
       },
       "visual" : {
         "at" : { "x" : 96, "y" : 64 }

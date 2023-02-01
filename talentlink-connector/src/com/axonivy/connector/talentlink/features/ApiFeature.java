@@ -8,7 +8,10 @@ import ch.ivyteam.ivy.webservice.exec.feature.WebServiceClientFeature;
 import ch.ivyteam.ivy.webservice.exec.feature.WebServiceClientFeatureContext;
 
 public class ApiFeature implements WebServiceClientFeature {
-
+	/** 
+	 *add api key as parameter to request
+	 *
+	 */
 	@Override
 	public void initialize(WebServiceClientFeatureContext context) {
 		Client proxy = ClientProxy.getClient(context.getBindingProvider());

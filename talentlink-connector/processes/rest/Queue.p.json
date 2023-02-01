@@ -20,7 +20,8 @@
             "result.error" : "in.#error",
             "result.application" : "in.#application"
           }
-        }
+        },
+        "tags" : "connector"
       },
       "visual" : {
         "at" : { "x" : 96, "y" : 64 }

@@ -23,7 +23,8 @@
       "name" : "getPosition.ivp",
       "config" : {
         "callSignature" : "getPosition",
-        "outLink" : "getPosition.ivp"
+        "outLink" : "getPosition.ivp",
+        "tags" : "demo"
       },
       "visual" : {
         "at" : { "x" : 88, "y" : 304 }
@@ -35,7 +36,8 @@
       "name" : "getDocument.ivp",
       "config" : {
         "callSignature" : "getDocument",
-        "outLink" : "getDocument.ivp"
+        "outLink" : "getDocument.ivp",
+        "tags" : "demo"
       },
       "visual" : {
         "at" : { "x" : 88, "y" : 376 }
@@ -160,7 +162,8 @@
           "params" : [
             { "name" : "departmentQuery", "type" : "String" }
           ]
-        }
+        },
+        "tags" : "demo"
       },
       "visual" : {
         "at" : { "x" : 88, "y" : 160 }
@@ -209,7 +212,8 @@
       "name" : "getSoapQueue.ivp",
       "config" : {
         "callSignature" : "getSoapQueue",
-        "outLink" : "getSoapQueue.ivp"
+        "outLink" : "getSoapQueue.ivp",
+        "tags" : "demo"
       },
       "visual" : {
         "at" : { "x" : 88, "y" : 456 }
@@ -297,7 +301,8 @@
       "name" : "getRestQueue.ivp",
       "config" : {
         "callSignature" : "getRestQueue",
-        "outLink" : "getRestQueue.ivp"
+        "outLink" : "getRestQueue.ivp",
+        "tags" : "demo"
       },
       "visual" : {
         "at" : { "x" : 88, "y" : 536 }
@@ -345,7 +350,8 @@
       "name" : "getLov.ivp",
       "config" : {
         "callSignature" : "getLov",
-        "outLink" : "getLov.ivp"
+        "outLink" : "getLov.ivp",
+        "tags" : "demo"
       },
       "visual" : {
         "at" : { "x" : 88, "y" : 624 }
@@ -395,38 +401,5 @@
         "at" : { "x" : 464, "y" : 624 },
         "description" : "Returns test data from lov Rest service. Searched by ID."
       }
-    }, {
-      "id" : "f42",
-      "type" : "RequestStart",
-      "name" : "documentRest.ivp",
-      "config" : {
-        "callSignature" : "documentRest",
-        "outLink" : "documentRest.ivp"
-      },
-      "visual" : {
-        "at" : { "x" : 88, "y" : 712 }
-      },
-      "connect" : { "id" : "f49", "to" : "f48" }
-    }, {
-      "id" : "f43",
-      "type" : "TaskEnd",
-      "visual" : {
-        "at" : { "x" : 344, "y" : 712 }
-      }
-    }, {
-      "id" : "f45",
-      "type" : "ProcessAnnotation",
-      "name" : "Lov",
-      "visual" : {
-        "at" : { "x" : 464, "y" : 712 },
-        "description" : "Returns test data from lov Rest service. Searched by ID."
-      }
-    }, {
-      "id" : "f48",
-      "type" : "Script",
-      "visual" : {
-        "at" : { "x" : 232, "y" : 792 }
-      },
-      "connect" : { "id" : "f46", "to" : "f43" }
     } ]
 }

@@ -23,7 +23,8 @@
           "params" : [
             { "name" : "listOfApplications", "type" : "java.util.List<com.lumessetalentlink.shared.apiproxy.tlk.rest.client.ApplicationDto>" }
           ]
-        }
+        },
+        "tags" : "connector"
       },
       "visual" : {
         "at" : { "x" : 96, "y" : 64 }
@@ -79,7 +80,8 @@
           "map" : {
             "result.listOfApplications" : "in.listOfApplications"
           }
-        }
+        },
+        "tags" : "connector"
       },
       "visual" : {
         "at" : { "x" : 96, "y" : 176 }

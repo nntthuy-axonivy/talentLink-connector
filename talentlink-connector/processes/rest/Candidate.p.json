@@ -101,7 +101,8 @@
           "map" : {
             "result.listOfCandidates" : "in.candidates"
           }
-        }
+        },
+        "tags" : "connector"
       },
       "visual" : {
         "at" : { "x" : 88, "y" : 192 }
