@@ -1,0 +1,118 @@
+{
+  "format" : "10.0.0",
+  "id" : "18607FCBBE143F04",
+  "kind" : "CALLABLE_SUB",
+  "config" : {
+    "data" : "talent.link.Data"
+  },
+  "elements" : [ {
+      "id" : "f0",
+      "type" : "CallSubStart",
+      "name" : "getApplicationById(Long)",
+      "config" : {
+        "callSignature" : "getApplicationById",
+        "input" : {
+          "params" : [
+            { "name" : "applicationId", "type" : "Long" }
+          ],
+          "map" : {
+            "out.applicationId" : "param.applicationId"
+          }
+        },
+        "result" : {
+          "params" : [
+            { "name" : "listOfApplications", "type" : "java.util.List<com.lumessetalentlink.shared.apiproxy.tlk.rest.client.ApplicationDto>" }
+          ]
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 64 }
+      },
+      "connect" : { "id" : "f2", "to" : "f8" }
+    }, {
+      "id" : "f1",
+      "type" : "CallSubEnd",
+      "visual" : {
+        "at" : { "x" : 376, "y" : 64 }
+      }
+    }, {
+      "id" : "f8",
+      "type" : "RestClientCall",
+      "name" : "Application",
+      "config" : {
+        "path" : "/candidate",
+        "clientId" : "d8e4652e-41d5-4023-90c5-5c822b8600e2",
+        "clientErrorCode" : "ivy:error:rest:client",
+        "queryParams" : {
+          "query" : "java.net.URLEncoder.encode(\"{applications(first: 10, after: 0, where: {id_eq:\"+in.applicationId+\"}) {id}}\", \"utf-8\")",
+          "stream" : "",
+          "api_key" : "ivy.var.get(\"talentlink-connector.apikey\")"
+        },
+        "statusErrorCode" : "ivy:error:rest:client",
+        "responseMapping" : {
+          "out.candidates" : "result.data.candidates"
+        },
+        "resultType" : "com.lumessetalentlink.shared.apiproxy.tlk.rest.client.CandidateGraphQlWrapperDto"
+      },
+      "visual" : {
+        "at" : { "x" : 264, "y" : 64 }
+      },
+      "connect" : { "id" : "f3", "to" : "f1" }
+    }, {
+      "id" : "f4",
+      "type" : "CallSubStart",
+      "name" : "getApplicationByQuery(String)",
+      "config" : {
+        "callSignature" : "getApplicationByQuery",
+        "input" : {
+          "params" : [
+            { "name" : "applicationQuery", "type" : "String" }
+          ],
+          "map" : {
+            "out.queryForApplication" : "param.applicationQuery"
+          }
+        },
+        "result" : {
+          "params" : [
+            { "name" : "listOfApplications", "type" : "java.util.List<com.lumessetalentlink.shared.apiproxy.tlk.rest.client.FullApplicationDto>" }
+          ],
+          "map" : {
+            "result.listOfApplications" : "in.listOfApplications"
+          }
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 176 }
+      },
+      "connect" : { "id" : "f9", "to" : "f6" }
+    }, {
+      "id" : "f5",
+      "type" : "CallSubEnd",
+      "visual" : {
+        "at" : { "x" : 376, "y" : 176 }
+      }
+    }, {
+      "id" : "f6",
+      "type" : "RestClientCall",
+      "name" : "Application",
+      "config" : {
+        "path" : "/candidate",
+        "clientId" : "d8e4652e-41d5-4023-90c5-5c822b8600e2",
+        "clientErrorCode" : "ivy:error:rest:client",
+        "queryParams" : {
+          "query" : "java.net.URLEncoder.encode(in.queryForApplication, \"utf-8\")",
+          "stream" : "",
+          "api_key" : "ivy.var.get(\"talentlink-connector.apikey\")"
+        },
+        "statusErrorCode" : "ivy:error:rest:client",
+        "responseMapping" : {
+          "out.candidates" : "result.data.candidates"
+        },
+        "resultType" : "com.lumessetalentlink.shared.apiproxy.tlk.rest.client.CandidateGraphQlWrapperDto"
+      },
+      "visual" : {
+        "at" : { "x" : 256, "y" : 176 }
+      },
+      "connect" : { "id" : "f7", "to" : "f5" }
+    } ]
+}

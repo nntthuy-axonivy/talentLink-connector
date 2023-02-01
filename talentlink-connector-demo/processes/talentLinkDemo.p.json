@@ -94,7 +94,7 @@
       "type" : "SubProcessCall",
       "name" : "rest/Candidate",
       "config" : {
-        "processCall" : "rest/Candidate:getCandidate(Long)",
+        "processCall" : "rest/Candidate:getCandidateById(Long)",
         "output" : {
           "map" : {
             "out" : "in",
@@ -124,7 +124,7 @@
       "type" : "SubProcessCall",
       "name" : "rest/Position",
       "config" : {
-        "processCall" : "rest/Position:getPosition(Long)",
+        "processCall" : "rest/Position:getPositionById(Long)",
         "output" : {
           "map" : {
             "out" : "in",
