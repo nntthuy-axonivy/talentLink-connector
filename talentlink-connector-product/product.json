@@ -7,7 +7,7 @@
           {
             "groupId": "com.axonivy.connector.talentlink",
             "artifactId": "talentlink-connector",
-            "version": "10.0.0-SNAPSHOT",
+            "version": "${version}",
             "type": "iar"
           }
         ],
@@ -29,7 +29,7 @@
           {
             "groupId": "com.axonivy.connector.talentlink.demo",
             "artifactId": "talentlink-demo",
-            "version": "10.0.0-SNAPSHOT",
+            "version": "1.0.0",
             "type": "iar"
           }
         ],

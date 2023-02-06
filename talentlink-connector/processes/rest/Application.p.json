@@ -8,7 +8,7 @@
   "elements" : [ {
       "id" : "f0",
       "type" : "CallSubStart",
-      "name" : "getApplicationById(Long)",
+      "name" : "getApplicationById",
       "config" : {
         "callSignature" : "getApplicationById",
         "input" : {
@@ -16,13 +16,16 @@
             { "name" : "applicationId", "type" : "Long" }
           ],
           "map" : {
-            "out.applicationId" : "param.applicationId"
+            "out.applicationId" : "param.#applicationId"
           }
         },
         "result" : {
           "params" : [
-            { "name" : "listOfApplications", "type" : "java.util.List<com.lumessetalentlink.shared.apiproxy.tlk.rest.client.ApplicationDto>" }
-          ]
+            { "name" : "listOfApplications", "type" : "java.util.List<com.lumessetalentlink.shared.apiproxy.tlk.rest.client.FullApplicationDto>" }
+          ],
+          "map" : {
+            "result.listOfApplications" : "in.listOfApplications"
+          }
         },
         "tags" : "connector"
       },
@@ -41,7 +44,7 @@
       "type" : "RestClientCall",
       "name" : "Application",
       "config" : {
-        "path" : "/candidate",
+        "path" : "/application",
         "clientId" : "d8e4652e-41d5-4023-90c5-5c822b8600e2",
         "clientErrorCode" : "ivy:error:rest:client",
         "queryParams" : {
@@ -51,9 +54,9 @@
         },
         "statusErrorCode" : "ivy:error:rest:client",
         "responseMapping" : {
-          "out.candidates" : "result.data.candidates"
+          "out.listOfApplications" : "result.data.applications"
         },
-        "resultType" : "com.lumessetalentlink.shared.apiproxy.tlk.rest.client.CandidateGraphQlWrapperDto"
+        "resultType" : "com.lumessetalentlink.shared.apiproxy.tlk.rest.client.ApplicationGraphQlWrapperDto"
       },
       "visual" : {
         "at" : { "x" : 264, "y" : 64 }
@@ -98,7 +101,7 @@
       "type" : "RestClientCall",
       "name" : "Application",
       "config" : {
-        "path" : "/candidate",
+        "path" : "/application",
         "clientId" : "d8e4652e-41d5-4023-90c5-5c822b8600e2",
         "clientErrorCode" : "ivy:error:rest:client",
         "queryParams" : {
@@ -108,9 +111,9 @@
         },
         "statusErrorCode" : "ivy:error:rest:client",
         "responseMapping" : {
-          "out.candidates" : "result.data.candidates"
+          "out.listOfApplications" : "result.data.applications"
         },
-        "resultType" : "com.lumessetalentlink.shared.apiproxy.tlk.rest.client.CandidateGraphQlWrapperDto"
+        "resultType" : "com.lumessetalentlink.shared.apiproxy.tlk.rest.client.ApplicationGraphQlWrapperDto"
       },
       "visual" : {
         "at" : { "x" : 256, "y" : 176 }

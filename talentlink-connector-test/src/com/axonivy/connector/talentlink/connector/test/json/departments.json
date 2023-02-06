@@ -1,0 +1,66 @@
+{
+    "data": {
+        "departments": [
+            {
+                "id": 1,
+                "level": 1,
+                "name": "Corporate Library",
+                "parentId": null
+            },
+            {
+                "id": 352,
+                "level": 1,
+                "name": "Ricoh Business Services Polska",
+                "parentId": null
+            },
+            {
+                "id": 353,
+                "level": 2,
+                "name": "Ricoh Business Services Polska",
+                "parentId": 352
+            },
+            {
+                "id": 354,
+                "level": 1,
+                "name": "Ricoh Spain & Portugal",
+                "parentId": null
+            },
+            {
+                "id": 396,
+                "level": 2,
+                "name": "CEO Office",
+                "parentId": 354
+            },
+            {
+                "id": 397,
+                "level": 2,
+                "name": "Commercial & Industrial Printing",
+                "parentId": 354
+            },
+            {
+                "id": 398,
+                "level": 3,
+                "name": "CIP Indirect Channel",
+                "parentId": 397
+            },
+            {
+                "id": 399,
+                "level": 3,
+                "name": "CIP Marketing & Business Development",
+                "parentId": 397
+            },
+            {
+                "id": 400,
+                "level": 3,
+                "name": "CIP Portugal",
+                "parentId": 397
+            },
+            {
+                "id": 401,
+                "level": 3,
+                "name": "CIP Sales Direct Channels",
+                "parentId": 397
+            }
+        ]
+    }
+}

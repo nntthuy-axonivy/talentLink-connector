@@ -347,59 +347,48 @@
     }, {
       "id" : "f36",
       "type" : "RequestStart",
-      "name" : "getLov.ivp",
+      "name" : "start22.ivp",
       "config" : {
-        "callSignature" : "getLov",
-        "outLink" : "getLov.ivp",
+        "callSignature" : "start22",
+        "outLink" : "start22.ivp",
         "tags" : "demo"
       },
       "visual" : {
-        "at" : { "x" : 88, "y" : 624 }
+        "at" : { "x" : 96, "y" : 616 }
       },
       "connect" : { "id" : "f40", "to" : "f38" }
     }, {
       "id" : "f37",
       "type" : "TaskEnd",
       "visual" : {
-        "at" : { "x" : 344, "y" : 624 }
+        "at" : { "x" : 352, "y" : 616 }
       }
     }, {
       "id" : "f38",
       "type" : "SubProcessCall",
-      "name" : "rest/Lov",
+      "name" : "rest/Application",
       "config" : {
-        "processCall" : "rest/Lov:call(Long)",
-        "output" : {
-          "map" : {
-            "out" : "in",
-            "out.lovs" : "result.lovs"
-          },
-          "code" : [
-            "if(result.lovs != null && result.lovs.size() > 0){",
-            "  ivy.log.info(\"Application: \"+result.lovs.get(0));",
-            "}"
-          ]
-        },
+        "processCall" : "rest/Application:getApplicationById(Long)",
         "call" : {
           "params" : [
-            { "name" : "lovId", "type" : "Long" }
+            { "name" : "applicationId", "type" : "Long" }
           ],
           "map" : {
-            "param.lovId" : "1"
+            "param.applicationId" : "2644"
           }
         }
       },
       "visual" : {
-        "at" : { "x" : 232, "y" : 624 }
+        "at" : { "x" : 240, "y" : 616 }
       },
       "connect" : { "id" : "f41", "to" : "f37" }
     }, {
       "id" : "f39",
       "type" : "ProcessAnnotation",
-      "name" : "Lov",
+      "name" : "REST/Queue",
       "visual" : {
-        "at" : { "x" : 464, "y" : 624 },
-        "description" : "Returns test data from lov Rest service. Searched by ID."
+        "at" : { "x" : 472, "y" : 616 },
+        "description" : "Returns test data from queue Rest service."
       }
     } ]
 }
