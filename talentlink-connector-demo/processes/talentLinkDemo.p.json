@@ -347,10 +347,10 @@
     }, {
       "id" : "f36",
       "type" : "RequestStart",
-      "name" : "start22.ivp",
+      "name" : "getApplication.ivp",
       "config" : {
-        "callSignature" : "start22",
-        "outLink" : "start22.ivp",
+        "callSignature" : "getApplication",
+        "outLink" : "getApplication.ivp",
         "tags" : "demo"
       },
       "visual" : {
@@ -385,10 +385,10 @@
     }, {
       "id" : "f39",
       "type" : "ProcessAnnotation",
-      "name" : "REST/Queue",
+      "name" : "REST/Application",
       "visual" : {
         "at" : { "x" : 472, "y" : 616 },
-        "description" : "Returns test data from queue Rest service."
+        "description" : "Returns test data from application Rest service."
       }
     } ]
 }
