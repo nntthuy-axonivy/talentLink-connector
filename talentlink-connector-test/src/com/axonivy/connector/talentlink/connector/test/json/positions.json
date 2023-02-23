@@ -1,0 +1,218 @@
+{
+    "data": {
+        "positions": [
+            {
+                "id": 574,
+                "expectedContractDates": null,
+                "location": null,
+                "organization": {
+                    "id": 353,
+                    "name": "Ricoh Business Services Polska",
+                    "parentId": 352,
+                    "level": 2,
+                    "structure": [
+                        {
+                            "id": 352,
+                            "name": "Ricoh Business Services Polska",
+                            "level": 1,
+                            "parentId": null
+                        }
+                    ]
+                }
+            },
+            {
+                "id": 592,
+                "expectedContractDates": null,
+                "location": null,
+                "organization": {
+                    "id": 353,
+                    "name": "Ricoh Business Services Polska",
+                    "parentId": 352,
+                    "level": 2,
+                    "structure": [
+                        {
+                            "id": 352,
+                            "name": "Ricoh Business Services Polska",
+                            "level": 1,
+                            "parentId": null
+                        }
+                    ]
+                }
+            },
+            {
+                "id": 665,
+                "expectedContractDates": null,
+                "location": null,
+                "organization": {
+                    "id": 353,
+                    "name": "Ricoh Business Services Polska",
+                    "parentId": 352,
+                    "level": 2,
+                    "structure": [
+                        {
+                            "id": 352,
+                            "name": "Ricoh Business Services Polska",
+                            "level": 1,
+                            "parentId": null
+                        }
+                    ]
+                }
+            },
+            {
+                "id": 780,
+                "expectedContractDates": null,
+                "location": {
+                    "city": "Gdansk",
+                    "region": "pomorskie",
+                    "country": "Poland"
+                },
+                "organization": {
+                    "id": 353,
+                    "name": "Ricoh Business Services Polska",
+                    "parentId": 352,
+                    "level": 2,
+                    "structure": [
+                        {
+                            "id": 352,
+                            "name": "Ricoh Business Services Polska",
+                            "level": 1,
+                            "parentId": null
+                        }
+                    ]
+                }
+            },
+            {
+                "id": 793,
+                "expectedContractDates": {
+                    "start": 1559520000000,
+                    "end": null
+                },
+                "location": {
+                    "city": "Tricity",
+                    "region": "pomorskie",
+                    "country": "Poland"
+                },
+                "organization": {
+                    "id": 353,
+                    "name": "Ricoh Business Services Polska",
+                    "parentId": 352,
+                    "level": 2,
+                    "structure": [
+                        {
+                            "id": 352,
+                            "name": "Ricoh Business Services Polska",
+                            "level": 1,
+                            "parentId": null
+                        }
+                    ]
+                }
+            },
+            {
+                "id": 794,
+                "expectedContractDates": {
+                    "start": 1559520000000,
+                    "end": null
+                },
+                "location": {
+                    "city": "Tricity",
+                    "region": "pomorskie",
+                    "country": "Poland"
+                },
+                "organization": {
+                    "id": 353,
+                    "name": "Ricoh Business Services Polska",
+                    "parentId": 352,
+                    "level": 2,
+                    "structure": [
+                        {
+                            "id": 352,
+                            "name": "Ricoh Business Services Polska",
+                            "level": 1,
+                            "parentId": null
+                        }
+                    ]
+                }
+            },
+            {
+                "id": 809,
+                "expectedContractDates": null,
+                "location": null,
+                "organization": {
+                    "id": 432,
+                    "name": "IT Services",
+                    "parentId": 354,
+                    "level": 2,
+                    "structure": [
+                        {
+                            "id": 354,
+                            "name": "Ricoh Spain & Portugal",
+                            "level": 1,
+                            "parentId": null
+                        }
+                    ]
+                }
+            },
+            {
+                "id": 811,
+                "expectedContractDates": null,
+                "location": null,
+                "organization": {
+                    "id": 432,
+                    "name": "IT Services",
+                    "parentId": 354,
+                    "level": 2,
+                    "structure": [
+                        {
+                            "id": 354,
+                            "name": "Ricoh Spain & Portugal",
+                            "level": 1,
+                            "parentId": null
+                        }
+                    ]
+                }
+            },
+            {
+                "id": 816,
+                "expectedContractDates": null,
+                "location": {
+                    "city": "Gdańsk",
+                    "region": "pomorskie",
+                    "country": "Poland"
+                },
+                "organization": {
+                    "id": 353,
+                    "name": "Ricoh Business Services Polska",
+                    "parentId": 352,
+                    "level": 2,
+                    "structure": [
+                        {
+                            "id": 352,
+                            "name": "Ricoh Business Services Polska",
+                            "level": 1,
+                            "parentId": null
+                        }
+                    ]
+                }
+            },
+            {
+                "id": 817,
+                "expectedContractDates": null,
+                "location": null,
+                "organization": {
+                    "id": 425,
+                    "name": "Human Resources",
+                    "parentId": 354,
+                    "level": 2,
+                    "structure": [
+                        {
+                            "id": 354,
+                            "name": "Ricoh Spain & Portugal",
+                            "level": 1,
+                            "parentId": null
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}

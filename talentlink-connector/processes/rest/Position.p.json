@@ -1,0 +1,157 @@
+{
+  "format" : "10.0.0",
+  "id" : "184C3626F42D7C7C",
+  "kind" : "CALLABLE_SUB",
+  "config" : {
+    "data" : "talent.link.Data"
+  },
+  "elements" : [ {
+      "id" : "f0",
+      "type" : "CallSubStart",
+      "name" : "getPositionById(Long)",
+      "config" : {
+        "callSignature" : "getPositionById",
+        "input" : {
+          "params" : [
+            { "name" : "positionId", "type" : "Long" }
+          ],
+          "map" : {
+            "out.positionId" : "param.positionId"
+          }
+        },
+        "result" : {
+          "params" : [
+            { "name" : "positions", "type" : "java.util.List<com.lumessetalentlink.shared.apiproxy.tlk.rest.client.OpeningFullDto>" },
+            { "name" : "error", "type" : "ch.ivyteam.ivy.bpm.error.BpmError" }
+          ],
+          "map" : {
+            "result.positions" : "in.positions",
+            "result.error" : "in.#error"
+          }
+        },
+        "tags" : "connector"
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 64 }
+      },
+      "connect" : { "id" : "f4", "to" : "f3" }
+    }, {
+      "id" : "f1",
+      "type" : "CallSubEnd",
+      "visual" : {
+        "at" : { "x" : 352, "y" : 64 }
+      }
+    }, {
+      "id" : "f3",
+      "type" : "RestClientCall",
+      "name" : "Position",
+      "config" : {
+        "path" : "/position",
+        "clientId" : "d8e4652e-41d5-4023-90c5-5c822b8600e2",
+        "clientErrorCode" : "ivy:error:rest:client",
+        "queryParams" : {
+          "query" : "java.net.URLEncoder.encode(\"{positions(first: 10, after: 0, where: {id_eq: \"+in.positionId+\"}) {id, expectedContractDates{start, end}, location{city, region, country}, configurableFields{lovs{valueLovId, value} }, organization{id, name, parentId, level, structure{id, name, level, parentId}}}}\", \"utf-8\")",
+          "stream" : ""
+        },
+        "statusErrorCode" : "ivy:error:rest:client",
+        "responseMapping" : {
+          "out.positions" : "result.data.positions"
+        },
+        "resultType" : "com.lumessetalentlink.shared.apiproxy.tlk.rest.client.PositionGraphQlWrapperDto"
+      },
+      "visual" : {
+        "at" : { "x" : 224, "y" : 64 }
+      },
+      "boundaries" : [ {
+          "id" : "f5",
+          "type" : "ErrorBoundaryEvent",
+          "config" : {
+            "output" : {
+              "map" : {
+                "out" : "in",
+                "out.error" : "error"
+              }
+            }
+          },
+          "visual" : {
+            "at" : { "x" : 256, "y" : 106 }
+          },
+          "connect" : { "id" : "f6", "to" : "f1", "via" : [ { "x" : 352, "y" : 106 } ] }
+        } ],
+      "connect" : { "id" : "f2", "to" : "f1" }
+    }, {
+      "id" : "f7",
+      "type" : "CallSubStart",
+      "name" : "getPositionByQuery(String)",
+      "config" : {
+        "callSignature" : "getPositionByQuery",
+        "input" : {
+          "params" : [
+            { "name" : "positionQuery", "type" : "String" }
+          ],
+          "map" : {
+            "out.queryForPosition" : "param.positionQuery"
+          }
+        },
+        "result" : {
+          "params" : [
+            { "name" : "positions", "type" : "java.util.List<com.lumessetalentlink.shared.apiproxy.tlk.rest.client.OpeningFullDto>" },
+            { "name" : "error", "type" : "ch.ivyteam.ivy.bpm.error.BpmError" }
+          ],
+          "map" : {
+            "result.positions" : "in.positions",
+            "result.error" : "in.#error"
+          }
+        },
+        "tags" : "connector"
+      },
+      "visual" : {
+        "at" : { "x" : 88, "y" : 200 }
+      },
+      "connect" : { "id" : "f13", "to" : "f9" }
+    }, {
+      "id" : "f8",
+      "type" : "CallSubEnd",
+      "visual" : {
+        "at" : { "x" : 344, "y" : 200 }
+      }
+    }, {
+      "id" : "f9",
+      "type" : "RestClientCall",
+      "name" : "Position",
+      "config" : {
+        "path" : "/position",
+        "clientId" : "d8e4652e-41d5-4023-90c5-5c822b8600e2",
+        "clientErrorCode" : "ivy:error:rest:client",
+        "queryParams" : {
+          "query" : "java.net.URLEncoder.encode(\"{positions(first: 10, after: 0, where: {id_eq: \"+in.positionId+\"}) {id, expectedContractDates{start, end}, location{city, region, country}, configurableFields{lovs{valueLovId, value} }, organization{id, name, parentId, level, structure{id, name, level, parentId}}}}\", \"utf-8\")",
+          "stream" : ""
+        },
+        "statusErrorCode" : "ivy:error:rest:client",
+        "responseMapping" : {
+          "out.positions" : "result.data.positions"
+        },
+        "resultType" : "com.lumessetalentlink.shared.apiproxy.tlk.rest.client.PositionGraphQlWrapperDto"
+      },
+      "visual" : {
+        "at" : { "x" : 216, "y" : 200 }
+      },
+      "boundaries" : [ {
+          "id" : "f10",
+          "type" : "ErrorBoundaryEvent",
+          "config" : {
+            "output" : {
+              "map" : {
+                "out" : "in",
+                "out.error" : "error"
+              }
+            }
+          },
+          "visual" : {
+            "at" : { "x" : 248, "y" : 242 }
+          },
+          "connect" : { "id" : "f11", "to" : "f8", "via" : [ { "x" : 344, "y" : 242 } ] }
+        } ],
+      "connect" : { "id" : "f12", "to" : "f8" }
+    } ]
+}

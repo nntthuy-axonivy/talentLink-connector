@@ -1,0 +1,83 @@
+{
+  "format" : "10.0.0",
+  "id" : "184C364CBAD7BCB0",
+  "kind" : "CALLABLE_SUB",
+  "config" : {
+    "data" : "talent.link.Data"
+  },
+  "elements" : [ {
+      "id" : "f0",
+      "type" : "CallSubStart",
+      "name" : "getStructuredDocumentById()",
+      "config" : {
+        "callSignature" : "wsResponse",
+        "input" : {
+          "params" : [
+            { "name" : "documentId", "type" : "Long" }
+          ],
+          "map" : {
+            "out.documentId" : "param.#documentId"
+          }
+        },
+        "result" : {
+          "params" : [
+            { "name" : "document", "type" : "com.mrted.ws.client.StructuredDocument" },
+            { "name" : "error", "type" : "ch.ivyteam.ivy.bpm.error.BpmError" }
+          ],
+          "map" : {
+            "result.document" : "in.#document",
+            "result.error" : "in.#error"
+          }
+        },
+        "tags" : "connector"
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 64 }
+      },
+      "connect" : { "id" : "f3", "to" : "f2" }
+    }, {
+      "id" : "f1",
+      "type" : "CallSubEnd",
+      "visual" : {
+        "at" : { "x" : 352, "y" : 64 }
+      }
+    }, {
+      "id" : "f2",
+      "type" : "WebServiceCall",
+      "name" : "document",
+      "config" : {
+        "clientId" : "1845780D24F6B50E",
+        "port" : "DocumentWebServicePort",
+        "inputParams" : {
+          "getStructuredDocumentById.documentId" : "in.documentId"
+        },
+        "output" : {
+          "map" : {
+            "out" : "in",
+            "out.document" : "wsResponse"
+          }
+        },
+        "operation" : "getStructuredDocumentById"
+      },
+      "visual" : {
+        "at" : { "x" : 224, "y" : 64 }
+      },
+      "boundaries" : [ {
+          "id" : "f5",
+          "type" : "ErrorBoundaryEvent",
+          "config" : {
+            "output" : {
+              "map" : {
+                "out" : "in",
+                "out.error" : "error"
+              }
+            }
+          },
+          "visual" : {
+            "at" : { "x" : 256, "y" : 106 }
+          },
+          "connect" : { "id" : "f6", "to" : "f1", "via" : [ { "x" : 352, "y" : 106 } ] }
+        } ],
+      "connect" : { "id" : "f4", "to" : "f1" }
+    } ]
+}

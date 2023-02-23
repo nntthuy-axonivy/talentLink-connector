@@ -1,0 +1,84 @@
+{
+  "format" : "10.0.0",
+  "id" : "184F62D8E93CB74D",
+  "kind" : "CALLABLE_SUB",
+  "config" : {
+    "data" : "talent.link.Data"
+  },
+  "elements" : [ {
+      "id" : "f0",
+      "type" : "CallSubStart",
+      "name" : "getApplicationFromQueue(String)",
+      "config" : {
+        "callSignature" : "getApplicationFromQueue",
+        "input" : {
+          "params" : [
+            { "name" : "queueName", "type" : "String" }
+          ],
+          "map" : {
+            "out.queueName" : "param.#queueName"
+          }
+        },
+        "result" : {
+          "params" : [
+            { "name" : "application", "type" : "com.mrted.ws.client.ApplicationDto" },
+            { "name" : "error", "type" : "ch.ivyteam.ivy.bpm.error.BpmError" }
+          ],
+          "map" : {
+            "result.application" : "in.#soapApplication",
+            "result.error" : "in.#error"
+          }
+        },
+        "tags" : "connector"
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 64 }
+      },
+      "connect" : { "id" : "f3", "to" : "f9" }
+    }, {
+      "id" : "f1",
+      "type" : "CallSubEnd",
+      "visual" : {
+        "at" : { "x" : 352, "y" : 64 }
+      }
+    }, {
+      "id" : "f9",
+      "type" : "WebServiceCall",
+      "name" : "Queue",
+      "config" : {
+        "clientId" : "184E713A9E5775B8",
+        "port" : "QueueWebServicePort",
+        "inputParams" : {
+          "getApplicationFromQueue.queueName" : "in.queueName",
+          "getApplicationFromQueue.showCandidateData" : "true"
+        },
+        "output" : {
+          "map" : {
+            "out" : "in",
+            "out.soapApplication" : "wsResponse"
+          }
+        },
+        "operation" : "getApplicationFromQueue"
+      },
+      "visual" : {
+        "at" : { "x" : 224, "y" : 64 }
+      },
+      "boundaries" : [ {
+          "id" : "f4",
+          "type" : "ErrorBoundaryEvent",
+          "config" : {
+            "output" : {
+              "map" : {
+                "out" : "in",
+                "out.error" : "error"
+              }
+            }
+          },
+          "visual" : {
+            "at" : { "x" : 256, "y" : 106 }
+          },
+          "connect" : { "id" : "f5", "to" : "f1", "via" : [ { "x" : 352, "y" : 106 } ] }
+        } ],
+      "connect" : { "id" : "f2", "to" : "f1" }
+    } ]
+}

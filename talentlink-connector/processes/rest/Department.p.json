@@ -1,0 +1,84 @@
+{
+  "format" : "10.0.0",
+  "id" : "184F0F5402BEBFF9",
+  "kind" : "CALLABLE_SUB",
+  "config" : {
+    "data" : "talent.link.Data"
+  },
+  "elements" : [ {
+      "id" : "f0",
+      "type" : "CallSubStart",
+      "name" : "getDepartment()",
+      "config" : {
+        "callSignature" : "call",
+        "input" : {
+          "params" : [
+            { "name" : "departmentId", "type" : "Long" },
+            { "name" : "query", "type" : "String" }
+          ],
+          "map" : {
+            "out.queryForDepartment" : "param.#query"
+          }
+        },
+        "result" : {
+          "params" : [
+            { "name" : "department", "type" : "java.util.List<com.lumessetalentlink.shared.apiproxy.tlk.rest.client.DepartmentFullDto>" },
+            { "name" : "error", "type" : "ch.ivyteam.ivy.bpm.error.BpmError" }
+          ],
+          "map" : {
+            "result.department" : "in.#departments",
+            "result.error" : "in.#error"
+          }
+        },
+        "tags" : "connector"
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 64 }
+      },
+      "connect" : { "id" : "f4", "to" : "f3" }
+    }, {
+      "id" : "f1",
+      "type" : "CallSubEnd",
+      "visual" : {
+        "at" : { "x" : 352, "y" : 64 }
+      }
+    }, {
+      "id" : "f3",
+      "type" : "RestClientCall",
+      "name" : "Department",
+      "config" : {
+        "path" : "/department",
+        "clientId" : "d8e4652e-41d5-4023-90c5-5c822b8600e2",
+        "clientErrorCode" : "ivy:error:rest:client",
+        "queryParams" : {
+          "query" : "java.net.URLEncoder.encode(\"\"+in.queryForDepartment+\"\",\"utf-8\")",
+          "stream" : ""
+        },
+        "statusErrorCode" : "ivy:error:rest:client",
+        "responseMapping" : {
+          "out.departments" : "result.data.departments"
+        },
+        "resultType" : "com.lumessetalentlink.shared.apiproxy.tlk.rest.client.DepartmentGraphQlWrapperDto"
+      },
+      "visual" : {
+        "at" : { "x" : 224, "y" : 64 }
+      },
+      "boundaries" : [ {
+          "id" : "f5",
+          "type" : "ErrorBoundaryEvent",
+          "config" : {
+            "output" : {
+              "map" : {
+                "out" : "in",
+                "out.error" : "error"
+              }
+            }
+          },
+          "visual" : {
+            "at" : { "x" : 256, "y" : 106 }
+          },
+          "connect" : { "id" : "f6", "to" : "f1", "via" : [ { "x" : 352, "y" : 106 } ] }
+        } ],
+      "connect" : { "id" : "f2", "to" : "f1" }
+    } ]
+}

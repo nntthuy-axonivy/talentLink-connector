@@ -1,12 +1,12 @@
 {
   "installers": [
     {
-      "id": "maven-import",
+      "id": "maven-dependency",
       "data": {
-        "projects": [
+        "dependencies": [
           {
-            "groupId": "MY-GROUP-ID",
-            "artifactId": "MY-PRODUCT-NAME-demo",
+            "groupId": "com.axonivy.connector.talentlink",
+            "artifactId": "talentlink-connector",
             "version": "${version}",
             "type": "iar"
           }
@@ -22,13 +22,13 @@
         ]
       }
     },
-    {
-      "id": "maven-dependency",
+        {
+      "id": "maven-import",
       "data": {
-        "dependencies": [
+        "projects": [
           {
-            "groupId": "MY-GROUP-ID",
-            "artifactId": "MY-PRODUCT-NAME",
+            "groupId": "com.axonivy.connector.talentlink",
+            "artifactId": "talentlink-connector-demo",
             "version": "${version}",
             "type": "iar"
           }
