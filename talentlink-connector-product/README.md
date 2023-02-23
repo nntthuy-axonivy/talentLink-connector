@@ -1,6 +1,6 @@
 # TalentLink Connector
-Link to TalentLink: https://developer.lumesse-talenthub.com/
-Axon Ivy’s TalentLink connector helps you accelerate your process automation initiatives by integrating TalentLink with your process application in the shortest possible time.
+
+Axon Ivyâ€™s TalentLink connector helps you accelerate your process automation initiatives by integrating [TalentLink](https://developer.lumesse-talenthub.com/) with your process application in the shortest possible time.
 
 This connector:
 
