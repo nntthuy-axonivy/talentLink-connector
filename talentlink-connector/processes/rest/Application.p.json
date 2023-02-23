@@ -49,8 +49,7 @@
         "clientErrorCode" : "ivy:error:rest:client",
         "queryParams" : {
           "query" : "java.net.URLEncoder.encode(\"{applications(first: 10, after: 0, where: {id_eq:\"+in.applicationId+\"}) {id}}\", \"utf-8\")",
-          "stream" : "",
-          "api_key" : ""
+          "stream" : ""
         },
         "statusErrorCode" : "ivy:error:rest:client",
         "responseMapping" : {
