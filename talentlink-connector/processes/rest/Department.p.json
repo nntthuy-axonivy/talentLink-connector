@@ -52,8 +52,7 @@
         "clientErrorCode" : "ivy:error:rest:client",
         "queryParams" : {
           "query" : "java.net.URLEncoder.encode(\"\"+in.queryForDepartment+\"\",\"utf-8\")",
-          "stream" : "",
-          "api_key" : "ivy.var.get(\"talentlink-connector.apikey\")"
+          "stream" : ""
         },
         "statusErrorCode" : "ivy:error:rest:client",
         "responseMapping" : {

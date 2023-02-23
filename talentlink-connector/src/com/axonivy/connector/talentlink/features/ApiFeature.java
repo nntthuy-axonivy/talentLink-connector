@@ -15,6 +15,6 @@ public class ApiFeature implements WebServiceClientFeature {
 	@Override
 	public void initialize(WebServiceClientFeatureContext context) {
 		Client proxy = ClientProxy.getClient(context.getBindingProvider());
-		proxy.getRequestContext().put("org.apache.cxf.message.Message.QUERY_STRING", "api_key="+Ivy.var().variable("talentlink-connector.apikey").value());
+		proxy.getRequestContext().put("org.apache.cxf.message.Message.QUERY_STRING", "api_key=" + Ivy.var().variable("talentlink-connector.apikey").value());
 	}
 }

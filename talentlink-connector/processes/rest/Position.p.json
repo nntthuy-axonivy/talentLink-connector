@@ -51,8 +51,7 @@
         "clientErrorCode" : "ivy:error:rest:client",
         "queryParams" : {
           "query" : "java.net.URLEncoder.encode(\"{positions(first: 10, after: 0, where: {id_eq: \"+in.positionId+\"}) {id, expectedContractDates{start, end}, location{city, region, country}, configurableFields{lovs{valueLovId, value} }, organization{id, name, parentId, level, structure{id, name, level, parentId}}}}\", \"utf-8\")",
-          "stream" : "",
-          "api_key" : "ivy.var.get(\"talentlink-connector.apikey\")"
+          "stream" : ""
         },
         "statusErrorCode" : "ivy:error:rest:client",
         "responseMapping" : {
@@ -126,8 +125,7 @@
         "clientErrorCode" : "ivy:error:rest:client",
         "queryParams" : {
           "query" : "java.net.URLEncoder.encode(\"{positions(first: 10, after: 0, where: {id_eq: \"+in.positionId+\"}) {id, expectedContractDates{start, end}, location{city, region, country}, configurableFields{lovs{valueLovId, value} }, organization{id, name, parentId, level, structure{id, name, level, parentId}}}}\", \"utf-8\")",
-          "stream" : "",
-          "api_key" : "ivy.var.get(\"talentlink-connector.apikey\")"
+          "stream" : ""
         },
         "statusErrorCode" : "ivy:error:rest:client",
         "responseMapping" : {

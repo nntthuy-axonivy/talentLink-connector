@@ -27,9 +27,9 @@
       "data": {
         "projects": [
           {
-            "groupId": "com.axonivy.connector.talentlink.demo",
-            "artifactId": "talentlink-demo",
-            "version": "1.0.0",
+            "groupId": "com.axonivy.connector.talentlink",
+            "artifactId": "talentlink-connector-demo",
+            "version": "${version}",
             "type": "iar"
           }
         ],

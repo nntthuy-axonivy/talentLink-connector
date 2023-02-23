@@ -38,10 +38,6 @@
         "path" : "/candidate/document/{documentId}",
         "clientId" : "d8e4652e-41d5-4023-90c5-5c822b8600e2",
         "clientErrorCode" : "ivy:error:rest:client",
-        "queryParams" : {
-          "query" : "",
-          "api_key" : "ivy.var.get(\"talentlink-connector.apikey\")"
-        },
         "statusErrorCode" : "ivy:error:rest:client",
         "templateParams" : {
           "documentId" : "in.documentId"

@@ -1,5 +1,6 @@
 # TalentLink Connector
-Axon Ivy’s TalentLink connector helps you accelerate your process automation initiatives by integrating TalenLink with your process application in the shortest possible time.
+Link to TalentLink: https://developer.lumesse-talenthub.com/
+Axon Ivy’s TalentLink connector helps you accelerate your process automation initiatives by integrating TalentLink with your process application in the shortest possible time.
 
 This connector:
 
@@ -13,7 +14,7 @@ This connector:
 
 ## Setup
 
-Before any interactions between the Axon Ivy Engine and TalentLink services can be run, they have to be introducted to each other. This can be done as follows:
+Before any interactions between the Axon Ivy Engine and TalentLink services can be run, they have to be introduced to each other. This can be done as follows:
 
 1. Get a TalentLink account `host-name`, `user-name`, `password` and `api_key` to use.
 
