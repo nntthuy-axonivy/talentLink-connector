@@ -50,7 +50,7 @@
         "clientId" : "d8e4652e-41d5-4023-90c5-5c822b8600e2",
         "clientErrorCode" : "ivy:error:rest:client",
         "queryParams" : {
-          "query" : "java.net.URLEncoder.encode(\"{ candidates(first: 10, after: 0, where: {id_eq:\"+in.candidateId+\"}) { id,  firstname, lastname, academicTitle, attachments{id, fileName}, email, personalData{dateOfBirth}}}\", \"utf-8\")",
+          "query" : "java.net.URLEncoder.encode(\"{ candidates(first: 10, after: 0, where: {id_eq:\"+in.candidateId+\"}) {id, initialType, personalData{sex, maritalStatus, citizenship, language}, address{address1, address2, zip, homePhone, workPhone, mobilePhone}  firstname, lastname, academicTitle, documents{id, type}, attachments{id, fileName}, email, personalData{dateOfBirth}}}\", \"utf-8\")",
           "stream" : ""
         },
         "statusErrorCode" : "ivy:error:rest:client",
