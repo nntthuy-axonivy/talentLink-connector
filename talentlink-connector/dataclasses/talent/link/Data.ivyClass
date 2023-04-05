@@ -24,4 +24,4 @@ listOfApplications java.util.List<com.lumessetalentlink.shared.apiproxy.tlk.rest
 listOfContracts java.util.List<com.lumessetalentlink.shared.apiproxy.tlk.rest.client.FullContractDto> #field
 contractId Long #field
 queryForContract String #field
-queueId Long #field
+idInQueue Long #field
