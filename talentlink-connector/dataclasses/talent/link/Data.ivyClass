@@ -21,3 +21,7 @@ queryForApplication String #field
 queryForCandidate String #field
 applicationId Long #field
 listOfApplications java.util.List<com.lumessetalentlink.shared.apiproxy.tlk.rest.client.FullApplicationDto> #field
+listOfContracts java.util.List<com.lumessetalentlink.shared.apiproxy.tlk.rest.client.FullContractDto> #field
+contractId Long #field
+queryForContract String #field
+queueId Long #field

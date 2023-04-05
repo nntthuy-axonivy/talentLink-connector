@@ -124,7 +124,7 @@
         "clientId" : "d8e4652e-41d5-4023-90c5-5c822b8600e2",
         "clientErrorCode" : "ivy:error:rest:client",
         "queryParams" : {
-          "query" : "java.net.URLEncoder.encode(\"{positions(first: 10, after: 0, where: {id_eq: \"+in.positionId+\"}) {id, expectedContractDates{start, end}, location{city, region, country}, configurableFields{lovs{valueLovId, value} }, organization{id, name, parentId, level, structure{id, name, level, parentId}}}}\", \"utf-8\")",
+          "query" : "java.net.URLEncoder.encode(in.queryForPosition, \"utf-8\")",
           "stream" : ""
         },
         "statusErrorCode" : "ivy:error:rest:client",

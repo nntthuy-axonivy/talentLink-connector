@@ -9,13 +9,15 @@ Variables:
 
   talentlink-connector:
   
-    host: ''
+    host: 
     
-    username: ''
+    username: 
     
     # [password]
-    password: ''
+    password: 
     
-    apikey: ''
+    apikey: 
+    
+    queueName: 
 
 
