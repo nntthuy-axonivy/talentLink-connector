@@ -6,6 +6,5 @@ application com.lumessetalentlink.shared.apiproxy.tlk.rest.client.QueuedApplicat
 candidates java.util.List<com.lumessetalentlink.shared.apiproxy.tlk.rest.client.CandidateFullDto> #field
 department java.util.List<com.lumessetalentlink.shared.apiproxy.tlk.rest.client.DepartmentFullDto> #field
 departmentQuery String #field
-applicationSoap com.mrted.ws.client.ApplicationDto #field
 lovs java.util.List<com.lumessetalentlink.shared.apiproxy.tlk.rest.client.LovFullDto> #field
 file java.io.File #field

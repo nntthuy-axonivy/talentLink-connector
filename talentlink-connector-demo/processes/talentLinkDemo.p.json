@@ -207,55 +207,6 @@
       },
       "connect" : { "id" : "f3", "to" : "f1" }
     }, {
-      "id" : "f8",
-      "type" : "RequestStart",
-      "name" : "getSoapQueue.ivp",
-      "config" : {
-        "callSignature" : "getSoapQueue",
-        "outLink" : "getSoapQueue.ivp",
-        "tags" : "demo"
-      },
-      "visual" : {
-        "at" : { "x" : 88, "y" : 456 }
-      },
-      "connect" : { "id" : "f23", "to" : "f16" }
-    }, {
-      "id" : "f14",
-      "type" : "TaskEnd",
-      "visual" : {
-        "at" : { "x" : 344, "y" : 456 }
-      }
-    }, {
-      "id" : "f16",
-      "type" : "SubProcessCall",
-      "name" : "soap/Queue",
-      "config" : {
-        "processCall" : "soap/Queue:getApplicationFromQueue(String)",
-        "output" : {
-          "map" : {
-            "out" : "in",
-            "out.applicationSoap" : "result.application"
-          },
-          "code" : [
-            "if(result.application != null){",
-            "  ivy.log.info(\"Application: \"+result.application);",
-            "}"
-          ]
-        },
-        "call" : {
-          "params" : [
-            { "name" : "queueName", "type" : "String" }
-          ],
-          "map" : {
-            "param.queueName" : "\"AxonIvy Offer Accepted\""
-          }
-        }
-      },
-      "visual" : {
-        "at" : { "x" : 232, "y" : 456 }
-      },
-      "connect" : { "id" : "f24", "to" : "f14" }
-    }, {
       "id" : "f25",
       "type" : "ProcessAnnotation",
       "name" : "Department",
@@ -288,14 +239,6 @@
         "description" : "Returns test data from document Soap service. Searched by ID."
       }
     }, {
-      "id" : "f29",
-      "type" : "ProcessAnnotation",
-      "name" : "SOAP/Queue",
-      "visual" : {
-        "at" : { "x" : 464, "y" : 456 },
-        "description" : "Returns test data from queue Soap service. Searched by queue name."
-      }
-    }, {
       "id" : "f30",
       "type" : "RequestStart",
       "name" : "getRestQueue.ivp",
@@ -319,7 +262,7 @@
       "type" : "SubProcessCall",
       "name" : "rest/Queue",
       "config" : {
-        "processCall" : "rest/Queue:call()",
+        "processCall" : "rest/Queue:getOldestElement(String)",
         "output" : {
           "map" : {
             "out" : "in",
@@ -329,6 +272,11 @@
             "if(result.application != null){",
             "  ivy.log.info(\"Application: \"+result.application);",
             "}"
+          ]
+        },
+        "call" : {
+          "params" : [
+            { "name" : "queueName", "type" : "String" }
           ]
         }
       },
