@@ -17,5 +17,5 @@ Variables:
     password: ''
     
     apikey: ''
-
-
+    
+    queueName: ''
