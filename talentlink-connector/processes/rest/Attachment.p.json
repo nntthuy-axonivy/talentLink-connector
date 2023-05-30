@@ -1,0 +1,82 @@
+{
+  "format" : "10.0.0",
+  "id" : "1882E31A11B7E690",
+  "kind" : "CALLABLE_SUB",
+  "config" : {
+    "data" : "rest.AttachmentData"
+  },
+  "elements" : [ {
+      "id" : "f0",
+      "type" : "CallSubStart",
+      "name" : "getAttachment(Long)",
+      "config" : {
+        "callSignature" : "getAttachment",
+        "input" : {
+          "params" : [
+            { "name" : "attachmentId", "type" : "Long" }
+          ],
+          "map" : {
+            "out.attachmentId" : "param.attachmentId"
+          }
+        },
+        "result" : {
+          "params" : [
+            { "name" : "attachment", "type" : "com.axonivy.connector.talentlink.entity.Attachment" },
+            { "name" : "error", "type" : "ch.ivyteam.ivy.bpm.error.BpmError" }
+          ],
+          "map" : {
+            "result.attachment" : "in.#attachment",
+            "result.error" : "in.#error"
+          }
+        },
+        "tags" : "connector"
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 64 }
+      },
+      "connect" : { "id" : "f4", "to" : "f5" }
+    }, {
+      "id" : "f1",
+      "type" : "CallSubEnd",
+      "visual" : {
+        "at" : { "x" : 352, "y" : 64 }
+      }
+    }, {
+      "id" : "f5",
+      "type" : "RestClientCall",
+      "name" : "Attachment",
+      "config" : {
+        "path" : "/candidate/attachment/{documentId}",
+        "clientId" : "d8e4652e-41d5-4023-90c5-5c822b8600e2",
+        "clientErrorCode" : "ivy:error:rest:client",
+        "statusErrorCode" : "ivy:error:rest:client",
+        "responseMapping" : {
+          "out.attachment" : "result"
+        },
+        "templateParams" : {
+          "documentId" : "in.attachmentId"
+        },
+        "resultType" : "com.axonivy.connector.talentlink.entity.Attachment"
+      },
+      "visual" : {
+        "at" : { "x" : 232, "y" : 64 }
+      },
+      "boundaries" : [ {
+          "id" : "f10",
+          "type" : "ErrorBoundaryEvent",
+          "config" : {
+            "output" : {
+              "map" : {
+                "out" : "in",
+                "out.error" : "error"
+              }
+            }
+          },
+          "visual" : {
+            "at" : { "x" : 264, "y" : 96 }
+          },
+          "connect" : { "id" : "f3", "to" : "f1" }
+        } ],
+      "connect" : { "id" : "f2", "to" : "f1" }
+    } ]
+}

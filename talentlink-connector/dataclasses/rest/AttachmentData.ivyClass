@@ -1,0 +1,5 @@
+AttachmentData #class
+rest #namespace
+attachment com.axonivy.connector.talentlink.entity.Attachment #field
+attachmentId Long #field
+error ch.ivyteam.ivy.bpm.error.BpmError #field
