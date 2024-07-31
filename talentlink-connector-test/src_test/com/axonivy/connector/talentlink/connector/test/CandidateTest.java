@@ -28,7 +28,7 @@ import ch.ivyteam.ivy.environment.AppFixture;
  * <a href="https://developer.axonivy.com/doc/10.0/concepts/testing/process-testing.html">Process Testing docs</a>
  * </p>
  */
-@IvyProcessTest
+@IvyProcessTest(enableWebServer = true)
 public class CandidateTest extends AbstractTalentlinkTest<CandidateFullDto>{
 
 private static final BpmElement getCandidateTestee = BpmProcess.path("rest/Candidate").elementName("getCandidateById(Long)");
